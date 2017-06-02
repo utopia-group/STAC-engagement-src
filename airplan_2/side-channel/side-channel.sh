@@ -11,7 +11,7 @@ echo "User response= $user"
 # uses the hacker 3247 baseline
 solution=$(echo "(48-sqrt(48*48+4*19*($user-3180)))/(-2*19)" | bc)
 # this formula was derived from: 
-# baseline+64*(n-1)+20*(n-1)*(n-2)/2 where: 
-# baseline= hacker resposne with 1 airport (3207)
+# baseline+105*(n-1)+38*(n-1)*(n-2)/2 where: 
+# baseline= hacker resposne with 1 airport (3247)
 # n= number of airports from the user
 echo "Hacker side-channel using formula (48-sqrt(48*48+4*19*(user-3180)))/(-2*19) = $solution airports"
