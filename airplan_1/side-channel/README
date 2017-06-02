@@ -1,0 +1,16 @@
+STEP 1:
+Start airplan server
+
+STEP 2:
+Generate a route map for the user with n airports and save it in the user.txt file
+./user-generator 33 > user.txt
+
+STEP 3:
+Use the user response from passenger_capacity_matrix query to determine the number of airports:
+./side-channel.sh 
+
+NOTES:
+A) We assume that all the airports have 3 characters
+B) If you want to try a new user.txt file, then you need to either remove the current map or restart the server
+
+The baseline response for 1 airport with 3 characters was computed using the response-hacker.sh script and has value 3207.
