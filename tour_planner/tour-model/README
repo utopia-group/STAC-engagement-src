@@ -1,0 +1,16 @@
+USAGE: ant enum -Dargs="<filename> <nb_cities>"
+
+EXAMPLE: ant enum -Dargs="cities.txt 5"
+
+This will enumerate the possible models with 5 cities such that the sum of the 
+size of the names of the 5 cities will be equal to 'Goal'.
+
+Output:
+...
+[java] Cities= 5 Goal= 39 Models= 5694
+...
+
+With 5 cities the 'Goal' with largest number of models is 39.
+There are 5694 combinations with 5 cities that have the sum equal to 39.
+Since the budget for the side-channel attack is 3000, we are not able to 
+perform a side-channel attack for any combination of 5 cities.

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="tour-enum" default="jar">
+
+    <dirname property="this.dir" file="${ant.file}"/>
+    <property name="target.loc" location="${target}"/>
+
+    <target name="init">
+        <mkdir dir="bin"/>
+    </target>
+
+    <target name="compile" depends="init"
+          description="compile the source code">
+
+    <javac target="1.7" source="1.7" srcdir="src" destdir="bin" debug="true">
+        <classpath>
+            <pathelement location="lib/org.sat4j.core.jar"/>
+            <pathelement location="lib/org.sat4j.pb.jar"/>
+        </classpath>
+    </javac>
+    </target>
+
+    <target name="enum">
+    <java classname="edu.utexas.ModelEnum"
+          maxmemory="4g"
+          fork="true"
+          failonerror="true">
+        <arg line="${args}"/>
+        <jvmarg value="-ea"/>
+        <classpath>
+            <pathelement location="${this.dir}/tour-enum.jar"/>
+            <pathelement location="lib/org.sat4j.core.jar"/>
+            <pathelement location="lib/org.sat4j.pb.jar"/>
+        </classpath>
+    </java>
+    </target>
+
+    <target name="jar" depends="compile"
+          description="generate the distribution" >
+        <jar jarfile="tour-enum.jar" basedir="bin"/>
+    </target>
+
+    <target name="clean"
+          description="clean up" >
+        <delete dir="bin"/>
+        <delete file="tour-enum.jar"/>
+    </target>
+</project>
