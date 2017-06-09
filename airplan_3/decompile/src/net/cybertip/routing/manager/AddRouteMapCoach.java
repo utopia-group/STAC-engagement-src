@@ -81,10 +81,11 @@ extends AirCoach {
         String mime = fieldNameInputs.get("MIME");
         String filePath = path.resolve(fileName).toString();
         String name = fieldNameInputs.get("route_map_name");
-        if (mime == null) return AddRouteMapCoach.obtainErrorResponse(400, "Invalid input");
-        if (name == null) {
-            return AddRouteMapCoach.obtainErrorResponse(400, "Invalid input");
-        }
+        System.out.println("name: " + name + " mime:" + mime + " map: " + fieldNameInputs);
+        if ((mime == null) || (name == null)) return AddRouteMapCoach.obtainErrorResponse(400, "Invalid input");
+//        if (name == null) {
+//            return AddRouteMapCoach.obtainErrorResponse(400, "Invalid input");
+//        }
         if (name.trim().isEmpty()) {
             return this.pullTemplateErrorResponse("The route map must have a name.", airline);
         }

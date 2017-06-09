@@ -216,7 +216,9 @@ public class MultipartHelper {
                         fileItem = item.getString();
                     }
                     fieldNameItems.put(fieldName, fileItem);
-                    fieldNameItems.put("MIME", item.getContentType());
+//                    fieldNameItems.put("MIME", item.getContentType());
+                    if (item.getContentType() != null)
+                        fieldNameItems.put("MIME", item.getContentType());
                     continue;
                 }
                 return MultipartHelper.obtainMultipartFileGuide();
