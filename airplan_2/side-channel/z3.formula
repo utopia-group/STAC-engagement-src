@@ -1,0 +1,12 @@
+; This example illustrates basic arithmetic and 
+; uninterpreted functions
+
+(declare-const a Int)
+(declare-const b Int)
+(declare-const c Int)
+(assert (= 3247 (+ (+ (* a (* 1 1)) (* b 1) c))))
+(assert (= 3352 (+ (+ (* a (* 2 2)) (* b 2) c))))
+(assert (= 3495 (+ (+ (* a (* 3 3)) (* b 3) c))))
+(check-sat)
+(get-model)
+(exit)

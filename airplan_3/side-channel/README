@@ -1,0 +1,31 @@
+STEP 1:
+./active_query.sh
+
+This script measures the response using the 'hacker.txt' route which will gives 
+as an upper bound on the size of the response of the user if the route is "Fully 
+Connected".
+
+If the response value from the user is larger than this value then the route 
+is "Not Fully Connected".
+
+Using this script we can find the upper bound on the size of the response for it 
+to be a "Fully Connected" route of 3585. This upper bound occurs when there are 
+19 characters used for the fields: (i) connected, (ii) bipartite, (iii) size, 
+(iv) density, (v) is 2-connected, (vi) is 3-connected, (vii) is 4-connected and 
+(viii) is 5-connected, and 38 characters used for the fields: (i) regular and 
+(ii) eulerian.
+
+STEP 2:
+./passive_query.sh <filename> <cutoff>
+
+EXAMPLE: ./passive_query.sh connected.txt
+
+Will return that the route 'connected.txt' is 'Fully Connected'
+
+EXAMPLE: ./passive_query.sh not-connected.txt
+
+Will return that the route 'not-connected.txt' is 'Not Fully Connected'
+
+EXAMPLE: ./passive_query.sh hacker.txt
+
+Will return that the route 'hacker.txt' is 'Fully Connected'

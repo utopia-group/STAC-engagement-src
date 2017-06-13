@@ -16,12 +16,12 @@ B) If you want to try a new user.txt file, then you need to either remove the
 current map or restart the server
 
 To find the quadratic attack formula we solve the following constraint system:
-http://rise4fun.com/Z3/rM1z
+http://rise4fun.com/Z3/4zypl
 
 To find this formula, we did three observations from the hacker perspective:
-i)  We created a route with only 1 airport and query it. Output: 3247
-ii) We created a route with onnly 2 airports and query it. Output: 3352
-iii) We created a route with onnly 3 airports and query it. Output: 3495
+i)  We created a route with only 1 airport and query it. Output: 3207
+ii) We created a route with onnly 2 airports and query it. Output: 3271
+iii) We created a route with onnly 3 airports and query it. Output: 3355
 
 We need three observations to find the constants a, b and c of the quadratic 
 formula: a*x^2+b*x+c=n
